@@ -8,8 +8,11 @@
 static int hook = -1;
 static tai_hook_ref_t ref_hook;
 
-static int sceSblUsVerifyPup_patched() {
-	return 0;
+static int sceSblUsVerifyPup_patched(char* path) {
+	int ret = TAI_CONTINUE(int, ref_hook,path);
+	if(ret == 0x800F0216)
+		return 0;
+	return ret;
 }
 
 void _start() __attribute__ ((weak, alias ("module_start")));
