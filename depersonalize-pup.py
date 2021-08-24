@@ -41,7 +41,7 @@ else:
 				fd.seek(0,0)
 				pup_bytes = bytearray(fd.read())
 
-				payload = b"depersonalize-pup.py :3 "*length				
+				payload = b"I like to see cute girls die <3 sony "*length				
 				if len(sys.argv) >= 3:
 					payload = open(sys.argv[2],"rb").read()
 				
